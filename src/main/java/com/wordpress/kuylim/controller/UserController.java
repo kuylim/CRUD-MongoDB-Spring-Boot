@@ -5,8 +5,10 @@
  */
 package com.wordpress.kuylim.controller;
 
+import com.wordpress.kuylim.model.Role;
 import com.wordpress.kuylim.model.User;
 import com.wordpress.kuylim.service.UserServices;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -73,5 +75,24 @@ public class UserController {
     {
         userService.update(user);
         return "redirect:/";
+    }
+    
+    @RequestMapping(value = "/find-by-name")
+    public @ResponseBody List<User> findByName()
+    {
+        return userService.findByName("kuylim");
+    }
+    
+    @RequestMapping(value = "/find-by-role")
+    public @ResponseBody List<User> findByRole()
+    {
+        Role role = new Role("1");
+        return userService.findByRole(role);
+    }
+    
+    @RequestMapping(value = "/find-by-email")
+    public @ResponseBody List<User> findByEmail()
+    {
+        return userService.findByEmail("kuylim.tith@gmail.com");
     }
 }

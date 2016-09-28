@@ -28,7 +28,7 @@ public class User {
     private List<String> tmproles;
     
     @DBRef
-    private List<Role> roles;
+    private List<Role> role;
     
     public User() 
     {
@@ -87,14 +87,14 @@ public class User {
      * @return the role
      */
     public List<Role> getRole() {
-        return roles;
+        return role;
     }
 
     /**
      * @param role the role to set
      */
     public void setRole(List<Role> role) {
-        this.roles = role;
+        this.role = role;
     }
 
     /**

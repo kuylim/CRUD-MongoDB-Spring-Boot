@@ -67,4 +67,19 @@ public class UserServices {
     {
         return userRepo.findOne(id);
     }
+    
+    public List<User> findByName(String name)
+    {
+        return userRepo.findByName(name);
+    }
+    
+    public List<User> findByRole(Role role)
+    {
+        return userRepo.findByRole(role);
+    }
+    
+    public List<User> findByEmail(String email)
+    {
+        return userRepo.findByEmail(email);
+    }
 }
